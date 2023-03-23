@@ -49,7 +49,6 @@ const ChatBody = ({
           {isSmallScreen && (
             <Typography variant="h6">
               Ask/Answer/Chat
-              {/* @Room {localStorage.getItem("userRoom")} */}
             </Typography>
           )}
           <Button

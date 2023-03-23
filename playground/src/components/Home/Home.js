@@ -25,21 +25,16 @@ const Home = ({ socket }) => {
   const classes = useStyles();
   const navigate = useNavigate();
 
-  const [room, setRoom] = useState("");
+  // const [room, setRoom] = useState("");
   const [userName, setUserName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     localStorage.setItem("userName", userName);
-    localStorage.setItem("userRoom", room);
-    if (room !== "") {
-      socket.emit("join_room", room);
-    }
 
     //sends the username and socket ID to the Node.js server
     socket.emit("newUser", { userName, socketID: socket.id });
-    // navigate("/playground");
     navigate("/chat");
   };
 
@@ -57,7 +52,7 @@ const Home = ({ socket }) => {
             label="Room"
             name="room"
             value="public"
-            onChange={(e) => setRoom(e.target.value)}
+            // onChange={(e) => setRoom(e.target.value)}
             margin="normal"
           />
           <TextField

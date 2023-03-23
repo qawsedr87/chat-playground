@@ -40,16 +40,19 @@ const ChatBar = ({ socket }) => {
   const [users, setUsers] = useState([]);
   const [userCount, setUserCount] = useState(0);
 
-  useEffect(() => {
-    socket.on("newUserResponse", (data) => {
-      setUsers(data);
-      setUserCount(data.length);
-    });
-  }, [socket, users, userCount]);
-
   const abstractUserName = (name) => {
     return name.length > 14 ? `${name.substring(0, 14)} ...` : name;
   };
+
+  const handleNewUserResponse = (users) => {
+    setUsers(users);
+    setUserCount(users.length);
+  };
+
+  useEffect(() => {
+    socket.on("newUserResponse", handleNewUserResponse);
+  }, [socket, users, userCount]);
+
   return (
     <Box className={classes.chatSidebar}>
       <Box>

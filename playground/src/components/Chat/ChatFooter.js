@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { TextField, Button, IconButton } from "@mui/material";
+import { TextField, IconButton } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import SendIcon from "@mui/icons-material/Send";
 
@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     padding: "10px",
     backgroundColor: "#F5F5F5",
-    // position: 'fixed',
     bottom: 0,
     borderBottomRightRadius: theme.spacing(1),
     boxShadow: theme.shadows[2],
@@ -85,7 +84,7 @@ const ChatFooter = ({ socket }) => {
         <IconButton
           type="submit"
           color="default"
-          aria-label="add to shopping cart"
+          aria-label="send message"
         >
           <SendIcon />
         </IconButton>
