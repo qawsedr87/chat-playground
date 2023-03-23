@@ -2,7 +2,7 @@
 
 This repository serves as a proof of concept for a small multiplayer playground - chat, using socket.io.
 
-## Game Pitch 
+## Game Pitch (only concept)
 The game is similar to "The Werewolves of Millers Hollow". Here's a high-level overview of how the game might work:
 
 - The master creates a room with a unique name and password, and enters their own name.
