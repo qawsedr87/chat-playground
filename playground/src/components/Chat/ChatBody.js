@@ -37,7 +37,6 @@ const ChatBody = ({
 
   const handleLeaveChat = () => {
     localStorage.removeItem("userName");
-    localStorage.removeItem("userRoom");
     navigate("/");
     window.location.reload();
   };

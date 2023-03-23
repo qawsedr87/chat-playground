@@ -45,16 +45,20 @@ const ChatBar = ({ socket }) => {
   };
 
   const handleNewUserResponse = (users) => {
+    console.log(JSON.stringify(users));
     setUsers(users);
     setUserCount(users.length);
   };
 
   useEffect(() => {
     socket.on("newUserResponse", handleNewUserResponse);
-  }, [socket, users, userCount]);
+  }, [socket]);
 
   return (
-    <Box className={classes.chatSidebar}>
+    <Box
+      className={classes.chatSidebar}
+      sx={{ display: { xs: "none", md: "block" } }}
+    >
       <Box>
         <Typography variant="h6" component="h3" className={classes.chatHeader}>
           Active Users {userCount === 0 ? `` : `(${userCount})`}

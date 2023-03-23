@@ -57,7 +57,7 @@ const Chat = ({ socket }) => {
   return (
     <>
       <div className={classes.chat}>
-        {!isSmallScreen && <ChatBar socket={socket} />}
+        {<ChatBar socket={socket}/>}
         <div className={classes.chatMain}>
           <ChatBody
             messages={messages}
